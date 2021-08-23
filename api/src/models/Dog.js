@@ -36,6 +36,11 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
+    Image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     //preguntar sobre el uso de banderas como identificador para los dogs creados por el usuario
     //muchas webs 🙆🏻‍♂️
     /* flagByUser: {

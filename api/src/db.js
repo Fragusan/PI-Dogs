@@ -2,7 +2,8 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const temperament = require('./models/temperament');
+//para la linea 38?
+//const temperament = require('./models/temperament');
 
 //esto es un destructuring de .env
 const {
@@ -41,8 +42,8 @@ const { Dog, Temperament } = sequelize.models;
 // Product.hasMany(Reviews);
 
 //tabla intermedia de realaciones many to many
-Dog.belongsToMany(Temperament, {through : "temperament-dog"});
-Temperament.belongsToMany(Dog, {through : "temperament-dog"});
+Dog.belongsToMany(Temperament, {through : "temperament_dog"});
+Temperament.belongsToMany(Dog, {through : "temperament_dog"});
 
 
 module.exports = {
