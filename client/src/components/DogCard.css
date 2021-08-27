@@ -1,0 +1,30 @@
+.dogcard
+{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 15px;
+    border: 3px;
+    height: auto;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.dogName
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.dogImg
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.dogTemperament
+{
+    display: flex;
+    flex-direction: column;
+}
+         

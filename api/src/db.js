@@ -41,7 +41,9 @@ const { Dog, Temperament } = sequelize.models;
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
+//seteo la cardinalidad de mis tablas
 //tabla intermedia de realaciones many to many
+//temperamentos - perros 
 Dog.belongsToMany(Temperament, {through : "temperament_dog"});
 Temperament.belongsToMany(Dog, {through : "temperament_dog"});
 
