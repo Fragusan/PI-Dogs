@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getDogs } from "../actions";
+import { getDogs, filterDogByUser } from "../actions";
 import { Link } from "react-router-dom"
 import DogCard from "./DogCard";
 import Paginacion from "./Paginacion";
+import SearchBar from "./Searchbar";
 
 export default function Home() {
 
@@ -33,11 +34,16 @@ export default function Home() {
         dispatch(getDogs())
     }
 
+    function handleFilterByUser(p) {
+        dispatch(filterDogByUser(p.target.value))
+    }
+
     return (
         <div>
+            <div><SearchBar/></div>
             <div>
-            <Link to="/dog">Agregar una nueva raza de perro</Link>
-            <h1>Dogs App Lite</h1>
+                <Link to="/dog">Agregar una nueva raza de perro</Link>
+                <h1>Dogs App Lite</h1>
             </div>
             <button onClick={p => { handleClick(p) }}>Restablecer los filtros</button>
             <div>
@@ -49,14 +55,15 @@ export default function Home() {
                     <option value="mayor">Mayor peso primero</option>
                     <option value="menor">Menor peso primero</option>
                 </select>
-                <select>
+                <select onChange={p => handleFilterByUser(p)}>
                     <option value="Unify">Todos</option>
                     <option value="dogApi">Solo Predeterminados</option>
                     <option value="myDog">Mis perros</option>
                 </select>
 
 
-                {razaActual?.map((r) => {
+               <div>
+               {razaActual?.map((r) => {
                     return (
                         <div className='dog'>
                             <Link to={`/home/${r.id}`}>
@@ -71,6 +78,7 @@ export default function Home() {
                 })
 
                 }
+               </div>
 
                 <hr />
 

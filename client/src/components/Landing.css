@@ -1,0 +1,51 @@
+.container
+{
+    position: relative;
+}
+
+
+
+.title
+{
+    font-size: 40px;
+    
+    
+    
+}
+.body
+{
+    position: absolute;
+    margin-left: 35%;
+    background: rgba(0, 0, 0, 0);
+    
+}
+
+.animationbackground
+{
+    background-image: url(https://i.ibb.co/zhmXRSL/verde-largo.png);
+    background-position: -300px 10px;
+    background-repeat:  repeat;
+    animation: animated 16s linear infinite;
+    -webkit-animation: animated 16s linear infinite;
+    margin: 0%;
+    width: 1500px;
+    max-width: 90%;
+    height: 170px;
+    /* top: -50%;   */
+    margin: 0 auto;
+    /* transform: rotate(120deg); */
+}
+
+@keyframes animated
+{
+    0%   {background-position:  0 0;}
+    50%  {background-position:  50% 0;}
+    100% {background-position:  100% 0;}
+}
+
+@-webkit-keyframes animated
+{
+    0%   {background-position:  0 0;}
+    50%  {background-position:  50% 0;}
+    100% {background-position:  100% 0;}      
+}
