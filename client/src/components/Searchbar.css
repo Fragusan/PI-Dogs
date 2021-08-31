@@ -1,0 +1,31 @@
+.bttsearch
+{
+    border-color: #7fb651;
+    border-radius: 0.7rem;
+    background: #c1e4a5;
+    cursor:pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.8s;
+}
+
+.bttsearch :hover
+{
+
+background:#6ea740;
+border-color:#59a51a;
+/* border-width: 2rem; */
+border-radius: 0.7rem;
+}
+
+.barsearch
+{
+    border-color: #c1e4a5;
+    border-radius: 2rem;
+    width: 15rem;
+    height: 1.5rem;
+    text-align: center;
+    size: 36px;
+    color: #519718;
+    background: #ddedd1;;
+}

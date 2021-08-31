@@ -28,7 +28,8 @@ export function filterByTemperament(){
 export function posNewDog(payload){
     return async function (dispatch){
         const respuesta = await axios.post("http://localhost:3001/dog", payload);
-        console.log("SOY POST:", respuesta)
+        console.log("SOY POST:", respuesta )
+        return respuesta
     }
 }
 
@@ -47,6 +48,13 @@ export function filterByName(payload){
     }
 }
 
+export function filterByW8(payload){
+    return{
+        type: 'FILTER_BY_WEIGHT',
+        payload
+    }
+}
+
 export function searchNameDog(payload){
     return async function (dispatch){
         try {
@@ -56,7 +64,7 @@ export function searchNameDog(payload){
                 payload: json.data
             })
         } catch (error){
-            console.log(error)
+            console.log("No se encontraron coincidencias para el termino")
         }
     }
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Landing.css";
 
 
+
 export default function Landing() {
     return (
         <div className="container">
@@ -10,7 +11,7 @@ export default function Landing() {
 
             
             <div className="animationbackground"/>
-            <div className="animationbackground"/>
+            
             <div className="body">
                 <div className="title">
                     <h1>Bienvenidos a</h1>
@@ -18,11 +19,12 @@ export default function Landing() {
                 </div>
                 <div className="button">
                     <Link to='/home'>
-                        <button >Iniciar</button>
+                        <button className="btntext" >Iniciar</button>
                     </Link>
                 </div>
 
             </div>
+            <div className="animationbackground"/>
             <div className="animationbackground"/>
             <div className="animationbackground"/>
             <div className="animationbackground"/>

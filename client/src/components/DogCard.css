@@ -1,16 +1,25 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body
 {
+
 position: relative;
 display: flex;
 justify-content: center;
 align-items: center;
-min-height: 100vh;
+/* min-height: 100vh; */
 
 }
 
 
 .dogcard
 {
+    
     /* display: flex;
     align-items: center;
     flex-direction: row;
@@ -19,25 +28,38 @@ min-height: 100vh;
     height: auto;
     margin-bottom: 25px;
     justify-content: center; */
+    top:20px;
+    border: solid 3px  rgb(7, 135, 56);
+    border-radius: 0.7rem;
     display: flex;
-    width: 600px;
+    width: 16rem;
+    font-family: var(--font-ubuntu);
+    position: relative;
+    margin: 0 auto;
+    
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 0.5rem;
 }
 
-*
+.dogcard + .dogcard
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin-left: 2rem;
 }
+
+
 
 
 
 .dogName
 {
+    height: 1rem;
+    margin: 1rem auto;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
+    color: #7fb651;
 }
 
 .dogImg
@@ -49,6 +71,14 @@ min-height: 100vh;
 .dogTemperament
 {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #7fb651;
+}
+
+@font-face{
+    font-family: "buble";
+    src: url("../other/Bubble.ttf");
+    
 }
          

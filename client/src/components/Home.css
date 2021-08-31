@@ -1,0 +1,54 @@
+
+.navbar
+{   
+    border-radius: 1rem;
+    background-color: #7fb651;
+    display: flex;
+    justify-content:space-around;
+}
+
+.menu
+{
+    display: grid;
+    margin: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+}
+.menu div
+{
+    border-color: #7fb651;
+    border-radius: 0.7rem;
+    background: #c1e4a5;
+    cursor:pointer;
+    transition: all 0.8s;
+    
+    box-shadow: 2px 2px 7px #000000;
+}
+
+.menu div :hover
+{
+    background:#6ea740;
+    border-color:#59a51a;
+    border-radius: 0.7rem;
+    box-shadow: 5px 5px 15px #000000;
+    
+}
+
+
+.dogCard
+{
+    
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+     
+    /* display:inline-flex;
+    justify-content: start;
+    text-decoration: none; */
+    
+}
+
+.dog
+{
+text-decoration: none;
+}
