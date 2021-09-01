@@ -2,6 +2,7 @@
  import "./Paginacion.css";
  //ver referencia en componente Home.js
 
+ //renderiza  los numeros del paginado
  export default function Paginacion({pPorPagina, razas, paginacion}){
      const numeroDePagina =[]
 

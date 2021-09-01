@@ -9,6 +9,7 @@
     box-shadow: 0px 0px 3px 1px rgb(56, 55, 56, 0.8);
     border-radius: 25px;
     height: 35px;
+    background-color:rgba(255, 249, 249, 0.616);
 }
 
 .ndepag
@@ -34,7 +35,7 @@
     width: 0px;
     height: 0px;
     transform: translate(-50%, -50%);
-    background: rgb(17, 138, 106);
+    background: rgb(8, 252, 49);
     border-radius: 50%;
     transition: all 0.5s;
     z-index: -1;
@@ -42,7 +43,7 @@
 
 .ndepag:hover
 {
-    color: rgb(247, 252, 251);;
+    color: rgb(5, 73, 129);;
 }
 
 .ndepag:hover:before

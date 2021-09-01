@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body
@@ -40,6 +41,7 @@ align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0.5rem;
+    background-color:rgba(255, 249, 249, 0.616);
 }
 
 .dogcard + .dogcard

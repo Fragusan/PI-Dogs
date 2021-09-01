@@ -12,6 +12,7 @@ export default function SearchBar() {
         e.preventDefault()
         setRaza(e.target.value)
         console.log("Buscando:", `"${raza}"`)
+        
        
     }
     
@@ -25,7 +26,7 @@ export default function SearchBar() {
     return (
         <div >
             <div><button className="bttsearch" type="submit" title="Buscar" onClick={(e)=>handleSubmit(e)}><img src="https://i.ibb.co/jRBJNf8/s.png" alt="search - buscar" /></button></div>
-            <div><input className="barsearch" type="text" placeholder="Introduce una raza de perro" onChange={(b)=> handleInputChange(b)} /></div>
+            <div><input required className="barsearch" type="text" placeholder="Introduce una raza de perro" onChange={(b)=> handleInputChange(b)} /></div>
             <div>{raza.length > 0 ? `Resultados de ${raza}` : null}</div>
         </div>
     )

@@ -69,6 +69,7 @@ export default function Home() {
     function handleByW8(e){
         e.preventDefault();
         dispatch(filterByW8(e.target.value))
+        //comience en la pagina desde el 1
         setPaginaActual(1);
         setByW8(`por peso ${e.target.value}`)
     }
@@ -136,9 +137,7 @@ export default function Home() {
                 </Paginacion>
                 <br />
 
-                <div>
-                    <span>Created by Fragusan 🚀</span>
-                </div>
+                <footer>Created by Fragusan 🚀</footer>
 
             </div>
         </div>

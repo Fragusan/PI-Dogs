@@ -248,7 +248,7 @@ router.post("/dog", async (req, res) => {
     if (name && height && weight 
         && life_span && flagByUser) {
             if(temperament.length === 0){ temperament.push("Nada que mostrar aquí")}
-        if (!Image) { Image = 78; }
+        if (!Image) { Image = "https://i.ibb.co/nCRkqJp/D1.png"; }
         let newdog = await Dog.create(
             {
                 name,

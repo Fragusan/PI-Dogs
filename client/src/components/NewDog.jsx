@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {posNewDog, filterByTemperament} from '../actions/index'
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,46 +14,95 @@ export default function NewDog(){
         weight : "",
         temperament : [],
         life_span : "",
-        Image :"",
+        Image :"",  
         flagByUser : true
 
      })
+     function handleChange(e){
+         setNuevo({
+             ...nuevo,
+             // se setea de manera dinamica con el value
+             [e.target.name] : e.target.value
+         })
+     }
+
+     function handleSelect(e){
+         setNuevo({
+             ...nuevo,
+            temperament: [...nuevo.temperament, e.target.value]
+         })
+     }
+
+     function handleSubmit(e){
+         e.preventDefault()
+         console.log("los datos a cargar:",nuevo)
+         dispatch(posNewDog(nuevo))
+         alert("La nueva raza fue creada de manera satisfactoria")
+         //borro los valores de la entrada al formulario
+        //  setNuevo({
+        //     name : "",
+        //     height : "",
+        //     weight : "",
+        //     temperament : [],
+        //     life_span : "",
+        //     Image :"",  
+        //     flagByUser : true
+
+        //  })
+
+     }
 
      // para renderizar los temperamentos
      useEffect(()=>{
-         dispatch(posNewDog());
-     }, []);
+         dispatch(filterByTemperament());
+     }, [dispatch]);
 
      return (
          <div>
-             <Link to="/home"><img src="https://i.ibb.co/W3y6NbM/dog-logo.png" weight="64px" alt="" /></Link>
+             <Link title="Regresar a la pantalla anterior" to="/home"><img src="https://i.ibb.co/W3y6NbM/dog-logo.png" weight="64px" alt="" /></Link>
              <h1>Agregar una nueva raza 🐶</h1>
-             {/* <form>
+             <form onSubmit={e => handleSubmit(e)}>
                  <div>
-                     <label>Nombre</label>
-                     <input type="text" value={input.name} name="name" />
+                     <label>Nombre: </label>
+                     <input required type="text" value={nuevo.name} name="nombre" onChange={e => handleChange(e)}/>
                  </div>
 
                  <div>
-                     <label>Altura (en cm):</label>
-                     <input type="number" name="valor minimo" min="10" max="103" value={input.height}/>
+                     <label>Altura (en cm): </label>
+                     <input required type="number" name="altura" min="10" max="103" value={nuevo.height} onChange={e => handleChange(e)}/>
                  </div>
                  <div>
-                     <label>Peso (en kg):</label>
-                     <input type="number" name="valor minimo" min="10" max="100" value={input.weight}/>
+                     <label>Peso (en kg): </label>
+                     <input required type="number" name="peso" min="10" max="100" value={nuevo.weight} onChange={e => handleChange(e)}/>
                     
                  </div>
                   <div>
-                     <label>Nombre </label>
-                     <input type="text" value={input.name} name="name" />
+                     <label>Esperanza de vida: </label>
+                     <input required type="number" value={nuevo.life_span} name="vida" onChange={e => handleChange(e)} />
                  </div> 
+                 <select onChange={(e)=> handleSelect(e)}>
+                     {temperament.map((t) =>{
+                         
+                         return <option value={t}> {t}</option>
+                     })}
+                 </select>
 
+                 <div>
+                     <h3>Temperamentos seleccionados</h3>
+                     <div>{nuevo.temperament.map(t=> `${t} , `)}</div>
+                 </div>
                   <div>
-                     <label></label>
+                     <label>Imagen del perro:  </label>
+                     <input type="text" value={nuevo.Image} name="img" onChange={e => handleChange(e)}/>
                  </div> 
 
+                  
+                 <button type="submit" >Crear la nueva raza</button>
+                 <button type="reset">Borrar todos los campos</button>
+                 <button><Link to="/home">Cancelar</Link></button>
 
-             </form> */}
+
+             </form>
          </div>
      )
 
