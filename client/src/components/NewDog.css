@@ -1,0 +1,22 @@
+.contenedor
+{
+    display: grid;
+    margin: 6rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    /* background-color: rgba(0, 0, 0, 0.315); */
+}
+
+.img
+{
+    
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.form
+{
+    background-color: rgba(0, 0, 0, 0.315);
+    border-radius: 5rem;
+    top: 13rem;
+    height: 50rem;
+}

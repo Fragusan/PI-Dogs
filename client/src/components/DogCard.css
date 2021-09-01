@@ -61,7 +61,7 @@ margin-left: 2rem;
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    color: #7fb651;
+    color: #4ba104;
 }
 
 .dogImg
@@ -75,7 +75,7 @@ margin-left: 2rem;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    color: #7fb651;
+    color: #4ba104;
 }
 
 @font-face{

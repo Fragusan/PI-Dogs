@@ -1,7 +1,9 @@
 
 .home
 {
-    background-image: url("https://i.ibb.co/hXkPqCM/celeste-largo-c-iconos.png");
+    /* background-image: url("https://i.ibb.co/hXkPqCM/celeste-largo-c-iconos.png"); */
+    background-color: rgba(0, 0, 0, 0.315);
+    border-radius: 5rem;
 }
 
 .navbar

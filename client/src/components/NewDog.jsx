@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import {posNewDog, filterByTemperament} from '../actions/index'
 import { useDispatch, useSelector } from "react-redux";
 
+import "./NewDog.css";
+
 export default function NewDog(){
      const dispatch = useDispatch()
      const temperament = useSelector((state) => state.temperament)
@@ -39,16 +41,15 @@ export default function NewDog(){
          dispatch(posNewDog(nuevo))
          alert("La nueva raza fue creada de manera satisfactoria")
          //borro los valores de la entrada al formulario
-        //  setNuevo({
-        //     name : "",
-        //     height : "",
-        //     weight : "",
-        //     temperament : [],
-        //     life_span : "",
-        //     Image :"",  
-        //     flagByUser : true
-
-        //  })
+         setNuevo({
+            name : "",
+            height : "",
+            weight : "",
+            temperament : [],
+             life_span : "",
+             Image :"",  
+            flagByUser : true
+          })
 
      }
 
@@ -58,27 +59,29 @@ export default function NewDog(){
      }, [dispatch]);
 
      return (
-         <div>
+         <div className="contenedor">
+             {/* <div className="img"><img src="https://i.ibb.co/jTdkb7G/d.png" alt="" /></div> */}
+             <div className="form">
              <Link title="Regresar a la pantalla anterior" to="/home"><img src="https://i.ibb.co/W3y6NbM/dog-logo.png" weight="64px" alt="" /></Link>
              <h1>Agregar una nueva raza 🐶</h1>
              <form onSubmit={e => handleSubmit(e)}>
                  <div>
                      <label>Nombre: </label>
-                     <input required type="text" value={nuevo.name} name="nombre" onChange={e => handleChange(e)}/>
+                     <input required type="text" value={nuevo.name} name="name" onChange={e => handleChange(e)}/>
                  </div>
 
                  <div>
                      <label>Altura (en cm): </label>
-                     <input required type="number" name="altura" min="10" max="103" value={nuevo.height} onChange={e => handleChange(e)}/>
+                     <input required type="number" name="height" min="10" max="103" value={nuevo.height} onChange={e => handleChange(e)}/>
                  </div>
                  <div>
                      <label>Peso (en kg): </label>
-                     <input required type="number" name="peso" min="10" max="100" value={nuevo.weight} onChange={e => handleChange(e)}/>
+                     <input required type="number" name="weight" min="4" max="110" value={nuevo.weight} onChange={e => handleChange(e)}/>
                     
                  </div>
                   <div>
                      <label>Esperanza de vida: </label>
-                     <input required type="number" value={nuevo.life_span} name="vida" onChange={e => handleChange(e)} />
+                     <input required type="number" value={nuevo.life_span} min="1" max="30" name="life_span" onChange={e => handleChange(e)} />
                  </div> 
                  <select onChange={(e)=> handleSelect(e)}>
                      {temperament.map((t) =>{
@@ -93,16 +96,19 @@ export default function NewDog(){
                  </div>
                   <div>
                      <label>Imagen del perro:  </label>
-                     <input type="text" value={nuevo.Image} name="img" onChange={e => handleChange(e)}/>
+                     <input type="text" value={nuevo.Image} name="Image" onChange={e => handleChange(e)}/>
                  </div> 
 
                   
                  <button type="submit" >Crear la nueva raza</button>
-                 <button type="reset">Borrar todos los campos</button>
+                 <button><Link to="/home">Volver al inicio</Link></button>
                  <button><Link to="/home">Cancelar</Link></button>
+                 
 
 
              </form>
+             </div>
+             
          </div>
      )
 
