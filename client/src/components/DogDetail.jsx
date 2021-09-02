@@ -36,6 +36,7 @@ export default function Detail(prop) {
                     : <div>
                         <div>Loading . . . </div>
                         <img src="https://i.ibb.co/TtR7Cgx/load.gif" alt="loading" />
+                        <div>¿Estás seguro que este ID es correcto?</div>
                         
                     </div>
             }</div>

@@ -27,5 +27,6 @@ border-radius: 0.7rem;
     text-align: center;
     size: 36px;
     color: #519718;
-    background: #ddedd1;;
+    background: #ddedd1;
+    outline: none;
 }

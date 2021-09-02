@@ -54,10 +54,12 @@ export default function Home() {
     function handleClick(a) {
         a.preventDefault();
         dispatch(getDogs())
+        setPaginaActual(1);
     }
 
     function handleFilterByUser(p) {
         dispatch(filterDogByUser(p.target.value))
+        setPaginaActual(1);
     }
 
     function handleByName(e) {
