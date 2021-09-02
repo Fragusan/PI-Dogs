@@ -274,6 +274,7 @@ router.post("/dog", async (req, res) => {
     res.status(404).send("faltan algunos parametros para la creacion de la raza")
 })
 
+
 router.get("/dogs/:idRaza", async (req,res)=>{
     const {idRaza} = req.params;
     const fullDog = await getUnifying()

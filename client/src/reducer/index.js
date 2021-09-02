@@ -2,8 +2,10 @@
 const initialState ={
     dogs : [],
     allDog : [],
+    // allDog2 : [],
     temperament : [],
     details: []
+
 }
 
 function rootReducer(state= initialState, action){
@@ -29,6 +31,30 @@ function rootReducer(state= initialState, action){
                 return {
                     ...state,
                     dogs: action.payload === "Unify" ? state.allDog : filterUser
+                }
+            case 'FILTER_TEMP':
+                const alldog2 = state.dogs
+                const filtemp = action.payload === "Todos" ? alldog2
+                : alldog2.filter(d => {
+                    if(d.temperament !== undefined){
+                       if(typeof d.temperament[0] === 'string'){
+                        
+                       return d.temperament?.includes(action.payload)
+                    }
+                    let arr = d.temperament?.map(e => e.name)
+                    return arr.includes(action.payload) 
+                    }
+                    
+                })
+
+                // const ffiltemp = action.payload === 'Active' ? state.allDog.filter(t =>t.temperament.includes("Active"))
+                // : action.payload === 'Clever' ? state.allDog.filter(t =>t.temperament.includes("Clever"))
+                // : action.payload === 'Intelligent' ? state.allDog.filter(t =>t.temperament.includes("Intelligent"))
+                // :action.payload === 'Playful' ? state.allDog.filter(t =>t.temperament.includes("Playful"))
+                // : null
+                return { 
+                    ...state,
+                    dogs: filtemp
                 }
             case 'FILTER_BY_NAME':
                 //es un array

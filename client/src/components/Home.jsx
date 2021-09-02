@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 //hooks de redux que voy a usar
 import { useDispatch, useSelector } from 'react-redux';
 //actions
-import { getDogs, filterDogByUser, filterByName, filterByW8, filterByTemperament } from "../actions";
+import { getDogs, filterDogByUser, filterByName, filterByW8, filterTemp } from "../actions";
 // para la redireccion
 import { Link } from "react-router-dom"
 // copoenntes importados
@@ -28,14 +28,15 @@ export default function Home() {
     const [paginaActual, setPaginaActual] = useState(1)
     //cuantoos por pagina 
     const [pPorPagina, setPPorPagina] = useState(8)
-    //logica para 
+    //logica para paginado
     const posicionDelUltimo = paginaActual * pPorPagina
     const posicionDelPrimero = posicionDelUltimo - pPorPagina
-    //paginado en render de lo que muestro, de tdos los perros solo tomo lo del paginado
+    //paginado en render de lo que muestro, de todos los perros solo tomo lo del paginado
     const razaActual = razas.slice(posicionDelPrimero, posicionDelUltimo)
 
     const [byName, setByName] = useState("")
     const [byW8, setByW8] = useState("")
+    const [temp, setTemp] = useState("")
     // const [tem, setTem] = useState("")
 
 
@@ -50,7 +51,7 @@ export default function Home() {
         //array de dependencia
     }, [dispatch])
 
-    //Funcionalidades de botones adcionales
+    //Funcionalidades de botones adcionales p/ filtros
     function handleClick(a) {
         a.preventDefault();
         dispatch(getDogs())
@@ -75,6 +76,12 @@ export default function Home() {
         //comience en la pagina desde el 1
         setPaginaActual(1);
         setByW8(`por peso ${e.target.value}`)
+    }
+
+    function handleTemp(e){
+        dispatch(filterTemp(e.target.value))
+        setPaginaActual(1)
+        // setTemp(`´por temperamento ${e.target.value}`)
     }
 
 
@@ -114,10 +121,18 @@ export default function Home() {
                     <option value="mayor">Menor primero</option>
                     <option value="menor">Mayor primero</option>
                 </select>
-                <select title="Filtar por..." onChange={p => handleFilterByUser(p)}>
+                <select title="Filtar por origen" onChange={p => handleFilterByUser(p)}>
                     <option value="Unify">Todos</option>
                     <option value="dogApi">Solo Predeterminados</option>
                     <option value="myDog">Mis perros</option>
+                </select>
+                <select title="Por temperamento" onChange={e => handleTemp(e)}>
+                    <option value="Todos">Todos</option>
+                    <option value="Active">Active</option>
+                    <option value="Affectionate">Affectionate</option>
+                    <option value="Clever">Clever</option>
+                    <option value="Intelligent">Intelligent</option>
+                    <option value="Playful">Playful</option>
                 </select>
 
 

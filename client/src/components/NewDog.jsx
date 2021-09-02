@@ -46,8 +46,8 @@ export default function NewDog(){
             height : "",
             weight : "",
             temperament : [],
-             life_span : "",
-             Image :"",  
+            life_span : "",
+            Image :"",  
             flagByUser : true
           })
 

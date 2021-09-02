@@ -42,6 +42,14 @@ export function posNewDog(payload) {
 
     }
 
+    export function filterTemp(payload){
+        console.log("temperament:",payload)
+        return{
+            type: 'FILTER_TEMP',
+            payload
+        }
+    }
+
     export function filterByName(payload) {
         return {
             type: 'FILTER_BY_NAME',
